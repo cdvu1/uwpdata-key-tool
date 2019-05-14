@@ -50,17 +50,14 @@ function renderKey(key) {
         li.setAttribute("data-toggle", "modal");
         li.setAttribute("data-target", "#edit-modal");
 
-        document.querySelector(".modal-key").textContent = key.key;
+        //document.querySelector(".modal-key").textContent = key.key;
+        document.querySelector("#test-key").textContent = key.key;
 
         document.querySelector("#edit-name").setAttribute("value", key.name);
         document.querySelector("#edit-description").textContent = key.description;
     })
     
-    let h5 = document.createElement("h5");
-    h5.classList.add("d-flex");
-    h5.classList.add("justify-content-between");
-    h5.classList.add("align-items-center");
-    h5.textContent = key.name;
+    let h5 = createNameHeader(key.name)
 
     let icons = document.createElement("span")
     let trash = handleTrashIcon(key);
@@ -83,6 +80,7 @@ function renderKey(key) {
     return li;
 }
 
+// create each list item
 function render(state) { //remove state eventually
     let ul = document.querySelector(".keys"); //get list
     ul.textContent = ""; //clear
@@ -127,11 +125,12 @@ document.querySelector(".modal-save").addEventListener("click", () => {
     //render();
 });
 
-//refresh on close
+//refresh on close or else any changes in modal will appear in all modals
 document.querySelector(".close").addEventListener("click", () => {
     location.reload();
 })
 
+//handles deleting key
 function handleTrashIcon(key) {
     let trash = document.createElement("span");
     trash.classList.add("oi");
@@ -145,6 +144,18 @@ function handleTrashIcon(key) {
     return trash;
 }
 
+//creates name header in list item
+function createNameHeader(name) {
+    let h5 = document.createElement("h5");
+    h5.classList.add("d-flex");
+    h5.classList.add("justify-content-between");
+    h5.classList.add("align-items-center");
+    h5.textContent = name;
+
+    return h5;
+}
+
+/*
 function handleEditIcon(key) {
     let edit = document.createElement("span");
     edit.classList.add("oi");
@@ -162,3 +173,4 @@ function handleEditIcon(key) {
     });
     return edit;
 }
+*/
