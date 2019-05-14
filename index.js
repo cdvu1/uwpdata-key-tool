@@ -50,9 +50,7 @@ function renderKey(key) {
         li.setAttribute("data-toggle", "modal");
         li.setAttribute("data-target", "#edit-modal");
 
-        //document.querySelector(".modal-key").textContent = key.key;
-        document.querySelector("#test-key").textContent = key.key;
-
+        document.querySelector(".key").textContent = key.key;
         document.querySelector("#edit-name").setAttribute("value", key.name);
         document.querySelector("#edit-description").textContent = key.description;
     })
