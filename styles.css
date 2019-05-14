@@ -1,0 +1,8 @@
+span .oi:hover {
+    cursor: pointer;
+}
+
+li:hover {
+    cursor: pointer;
+    background-color: #F0F0F0;
+}
