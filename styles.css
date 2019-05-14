@@ -6,3 +6,7 @@ li:hover {
     cursor: pointer;
     background-color: #F0F0F0;
 }
+
+body {
+    margin-bottom: 20px;
+}
